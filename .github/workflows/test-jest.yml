@@ -1,9 +1,13 @@
 name: CI - Vitest
 on:
   pull_request:
+    types: 
+      - ready_for_review
+      - review_requested
     branches:
       - master
   workflow_dispatch:
+  
 
 jobs:
   run-tests:

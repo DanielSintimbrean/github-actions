@@ -3,13 +3,11 @@ on:
   pull_request:
     branches:
       - master
-    types: 
-      - ready_for_review
-      - review_requested
   workflow_dispatch:
 
 jobs:
   install-run:
+    if: github.event.pull_request.draft == 'false'
     runs-on: ubuntu-latest
 
     steps:

@@ -4,7 +4,7 @@ on:
   - workflow_dispatch
 
 jobs:
-  cache-and-install:
+  install-run:
     runs-on: ubuntu-latest
 
     steps:
@@ -39,9 +39,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-  run-test:
-    needs: cache-and-install
-    runs-on: ubuntu-latest
-    steps:
+
       - name: Run vitest
         run: pnpm test

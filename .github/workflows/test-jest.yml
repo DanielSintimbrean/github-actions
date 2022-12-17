@@ -1,10 +1,11 @@
-name: Github Pages Astro CI
+name: Build and Test
 
 on:
   # Trigger the workflow every time you push to the `main` branch
   # Using a different branch name? Replace `main` with your branch’s name
-  push:
-    branches: [master]
+  pull_request_review:
+    types: [submitted]
+
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
@@ -33,14 +34,3 @@ jobs:
     steps:
       - name: Run vitest
         run: pnpm test
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1

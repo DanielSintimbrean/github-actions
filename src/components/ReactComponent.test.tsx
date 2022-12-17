@@ -31,7 +31,7 @@ describe("React Component", () => {
 
     screen.getByText("Hello from ReactComponent - 1");
 
-    fireEvent.click(screen.getByText("Click me again"));
+    fireEvent.click(screen.getByText("Increment"));
 
     screen.getByText("Hello from ReactComponent - 2");
   });
@@ -42,7 +42,7 @@ describe("React Component", () => {
     fireEvent.click(screen.getByText("Click me"));
 
     for (let i = 0; i < 15; i++) {
-      fireEvent.click(screen.getByText("Click me again"));
+      fireEvent.click(screen.getByText("Increment"));
     }
 
     screen.getByText("Hello from ReactComponent - 10");

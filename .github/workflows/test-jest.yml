@@ -1,3 +1,4 @@
+name: run vitest
 on:
   - pull_request_review
   - workflow_dispatch

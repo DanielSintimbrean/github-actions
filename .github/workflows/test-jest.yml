@@ -1,4 +1,4 @@
-name: run vitest
+name: CI - Vitest
 on:
   pull_request:
     branches:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  install-run:
+  run-tests:
     if: github.event.pull_request.draft == 'false'
     runs-on: ubuntu-latest
 

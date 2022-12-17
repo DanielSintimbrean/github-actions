@@ -11,7 +11,7 @@ export default function ReactComponent() {
       </div>
       <button
         className="btn btn-primary max-w-md"
-        onClick={() => setContador((prev) => prev + 1)}
+        onClick={() => setContador((prev) => prev + 2)}
       >
         {contador === 0 ? "Click me" : "Click me again"}
       </button>

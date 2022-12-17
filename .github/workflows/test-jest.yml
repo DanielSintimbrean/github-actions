@@ -1,9 +1,7 @@
 name: CI - Vitest
 on:
-  pull_request:
-    types: 
-      - ready_for_review
-      - review_requested
+  pull_request_review:
+    types: [submitted]
     branches:
       - master
   workflow_dispatch:
@@ -11,7 +9,7 @@ on:
 
 jobs:
   run-tests:
-    if: github.event.pull_request.draft == 'false'
+    if: github.event.pull_request.draft == 'false' && github.event.review.state == 'approved'
     runs-on: ubuntu-latest
 
     steps:

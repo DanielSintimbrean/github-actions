@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import ReactComponent from "./ReactComponent";
 import { render, screen, cleanup, fireEvent } from "@testing-library/react";
 
@@ -46,5 +46,25 @@ describe("React Component", () => {
     }
 
     screen.getByText("Hello from ReactComponent - 10");
+  });
+
+  it("should decrement", () => {
+    screen.getByText("Hello from ReactComponent - 0");
+
+    fireEvent.click(screen.getByText("Click me"));
+    fireEvent.click(screen.getByText("Decrement"));
+
+    screen.getByText("Hello from ReactComponent - 0");
+  });
+
+  it("should not find decrement", () => {
+    screen.getByText("Hello from ReactComponent - 0");
+
+    fireEvent.click(screen.getByText("Click me"));
+    fireEvent.click(screen.getByText("Decrement"));
+
+    expect(screen.queryByText("Decrement")).toBeNull();
+
+    screen.getByText("Hello from ReactComponent - 0");
   });
 });

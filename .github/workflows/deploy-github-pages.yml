@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run vitest
-        run: test
+        run: npm run test
 
   deploy:
     needs: build

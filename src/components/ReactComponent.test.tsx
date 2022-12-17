@@ -35,4 +35,16 @@ describe("React Component", () => {
 
     screen.getByText("Hello from ReactComponent - 2");
   });
+
+  it("should not increment more than 10", () => {
+    screen.getByText("Hello from ReactComponent - 0");
+
+    fireEvent.click(screen.getByText("Click me"));
+
+    for (let i = 0; i < 15; i++) {
+      fireEvent.click(screen.getByText("Click me again"));
+    }
+
+    screen.getByText("Hello from ReactComponent - 10");
+  });
 });

@@ -24,6 +24,8 @@ export default function ReactComponent() {
           {"Decrement"}
         </button>
       )}
+      {contador ==10 && <div className="">Enhorabuena has llegado a 10 😘</div> }
+      
     </div>
   );
 }

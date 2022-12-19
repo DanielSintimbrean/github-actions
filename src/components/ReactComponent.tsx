@@ -14,7 +14,7 @@ export default function ReactComponent() {
         disabled={contador >= 10}
         onClick={() => setContador((prev) => prev + 1)}
       >
-        {contador === 0 ? "Click me" : "Increment"}
+        {contador === 0 ? "Click me." : "Increment"}
       </button>
       {contador > 0 && (
         <button
@@ -25,6 +25,7 @@ export default function ReactComponent() {
         </button>
       )}
       {contador ==10 && <div className="">Enhorabuena has llegado a 10 😘</div> }
+      {contador !=10 && <div className="">Clica lo mas rápido que puedas</div> }
       
     </div>
   );

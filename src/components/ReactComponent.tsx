@@ -14,7 +14,7 @@ export default function ReactComponent() {
         disabled={contador >= 10}
         onClick={() => setContador((prev) => prev + 1)}
       >
-        {contador === 0 ? "Click me." : "Increment"}
+        {contador === 0 ? "Click me" : "Increment"}
       </button>
       {contador > 0 && (
         <button

@@ -25,6 +25,7 @@ export default function ReactComponent() {
         </button>
       )}
       {contador ==10 && <div className="">Enhorabuena has llegado a 10 😘</div> }
+      {contador !=10 && <div className="">Clica lo mas rápido que puedas</div> }
       
     </div>
   );
